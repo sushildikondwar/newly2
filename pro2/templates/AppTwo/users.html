@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Help Page</title>
+        <style>
+            td,tr,th{
+                border: 1px black solid;
+            }
+            table{
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>Full Name</th>
+                <th>E-mail ID</th>
+            </thead>
+                {% if alldetails %}
+                    {% for detail in alldetails %}
+                    <tr>
+                        <td>
+                            {{ detail.first_name }} {{ detail.last_name }}
+                        </td>
+                        <td>
+                            {{ detail.email }}
+                        </td>
+                        <td>
+                            {{ detail.company }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+        </table>
+
+    </body>
+</html>
